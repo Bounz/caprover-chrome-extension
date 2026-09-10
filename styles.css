@@ -1,0 +1,71 @@
+.caprover-redeploy-image-cell {
+  white-space: nowrap;
+}
+
+.caprover-redeploy-button {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  color: #1677ff;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 28px;
+  justify-content: center;
+  margin-left: 10px;
+  padding: 4px;
+  transition: background-color 150ms ease, color 150ms ease, opacity 150ms ease;
+  width: 28px;
+  vertical-align: middle;
+}
+
+.caprover-redeploy-button:hover {
+  background: rgba(22, 119, 255, 0.1);
+  color: #4096ff;
+}
+
+.caprover-redeploy-button:focus-visible {
+  outline: 2px solid #1677ff;
+  outline-offset: 1px;
+}
+
+.caprover-redeploy-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.caprover-redeploy-button svg {
+  fill: currentColor;
+  height: 20px;
+  width: 20px;
+}
+
+.caprover-redeploy-button.is-loading svg {
+  animation: caprover-redeploy-spin 750ms linear infinite;
+}
+
+.caprover-redeploy-button.is-done {
+  color: #52c41a;
+}
+
+.caprover-redeploy-button.is-error {
+  color: #ff4d4f;
+}
+
+@keyframes caprover-redeploy-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caprover-redeploy-button {
+    transition: none;
+  }
+
+  .caprover-redeploy-button.is-loading svg {
+    animation-duration: 1500ms;
+  }
+}

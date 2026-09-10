@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "CapRover Redeploy",
+  "description": "Redeploy a CapRover app directly from an image in Version History.",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
