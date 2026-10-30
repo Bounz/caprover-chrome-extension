@@ -20,6 +20,24 @@ is performed by the CapRover interface in your already authenticated tab.
 4. Select this directory.
 5. Refresh your open CapRover tab.
 
+## Installation in Firefox / Zen Browser
+
+The Firefox build uses the same `content.js` and `styles.css` with its own
+manifest in `firefox/manifest.json`.
+
+1. Run `./firefox/build.sh`. It creates `dist/firefox/` and
+   `dist/caprover-redeploy-firefox.zip`.
+2. Open `about:debugging#/runtime/this-firefox`.
+3. Click **Load Temporary Add-on…** and select `dist/firefox/manifest.json`.
+4. Open `about:addons`, select **CapRover Redeploy**, and on the
+   **Permissions** tab make sure access to all websites is allowed.
+5. Refresh your open CapRover tab.
+
+A temporary add-on is removed when the browser restarts. To keep it installed
+permanently, sign `dist/caprover-redeploy-firefox.zip` on
+[addons.mozilla.org](https://addons.mozilla.org/developers/) as an unlisted
+add-on and install the signed `.xpi` file.
+
 ## Usage
 
 Open an app in CapRover and select the **Deployment** tab. A blue redeploy button
